@@ -1,0 +1,102 @@
+.coming-soon {
+  min-height: calc(100vh - 70px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  background: linear-gradient(135deg, #1a1a1a 0%, #000000 100%);
+}
+
+.coming-soon-content {
+  background: #1a1a1a;
+  border-radius: 20px;
+  padding: 3rem;
+  max-width: 600px;
+  text-align: center;
+  box-shadow: 0 20px 60px rgba(255, 255, 255, 0.1);
+}
+
+.coming-soon-title {
+  font-size: 2.5rem;
+  color: #ffffff;
+  margin-bottom: 1rem;
+}
+
+.coming-soon-description {
+  font-size: 1.1rem;
+  color: #cccccc;
+  margin-bottom: 2rem;
+  line-height: 1.6;
+}
+
+.features-list {
+  text-align: left;
+  margin-bottom: 2rem;
+  padding: 1.5rem;
+  background: #000000;
+  border-radius: 12px;
+}
+
+.features-list h3 {
+  color: #ffffff;
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+}
+
+.features-list ul {
+  list-style: none;
+  padding: 0;
+}
+
+.features-list li {
+  padding: 0.5rem 0;
+  color: #cccccc;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.features-list li::before {
+  content: '✓';
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 1.2rem;
+}
+
+.under-construction {
+  padding-top: 2rem;
+  border-top: 2px solid #333333;
+}
+
+.construction-icon {
+  font-size: 3rem;
+  display: block;
+  margin-bottom: 1rem;
+  animation: bounce 2s ease-in-out infinite;
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.under-construction p {
+  color: #cccccc;
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .coming-soon-content {
+    padding: 2rem;
+  }
+
+  .coming-soon-title {
+    font-size: 2rem;
+  }
+}
