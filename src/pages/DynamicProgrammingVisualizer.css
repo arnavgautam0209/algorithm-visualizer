@@ -1,0 +1,206 @@
+.dp-visualizer {
+  min-height: calc(100vh - 70px);
+  padding: 3rem 2rem;
+  background-color: #ffffff;
+}
+
+.visualizer-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.page-title {
+  font-size: 2.75rem;
+  color: #000000;
+  margin-bottom: 0.75rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+.page-subtitle {
+  font-size: 1.15rem;
+  color: #666666;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+}
+
+/* NEW LAYOUT: Side-by-side */
+.visualizer-content {
+  display: flex;
+  gap: 2rem;
+  max-width: 1400px;
+  margin: 0 auto;
+  align-items: stretch;
+}
+
+/* LEFT SIDEBAR FOR CONTROLS */
+.controls-sidebar {
+  background: linear-gradient(135deg, #fafafa 0%, #f5f5f5 100%);
+  border-radius: 16px;
+  padding: 2rem;
+  min-width: 280px;
+  max-width: 320px;
+  box-shadow: 
+    0 1px 3px rgba(0, 0, 0, 0.05),
+    0 10px 30px rgba(0, 0, 0, 0.08);
+  border: 2px solid #e8e8e8;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  transition: all 0.3s ease;
+}
+
+.controls-sidebar:hover {
+  box-shadow: 
+    0 2px 6px rgba(0, 0, 0, 0.06),
+    0 12px 35px rgba(0, 0, 0, 0.1);
+}
+
+.controls-panel { display: none; }
+
+.control-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.control-group label {
+  font-weight: 600;
+  color: #000000;
+  font-size: 0.95rem;
+  letter-spacing: -0.01em;
+}
+
+.slider, .number-input, .algorithm-select {
+  padding: 0.75rem;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 1rem;
+  color: #000000;
+  background-color: #ffffff;
+  transition: all 0.3s ease;
+}
+
+.slider {
+  padding: 0;
+  height: 6px;
+  background: #e0e0e0;
+  outline: none;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #000000;
+  cursor: pointer;
+}
+
+.algorithm-select { cursor: pointer; }
+.button-group { display: flex; flex-direction: column; gap: 0.75rem; }
+.btn {
+  padding: 0.875rem 1.25rem;
+  border: none;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  width: 100%;
+  letter-spacing: -0.01em;
+}
+
+.btn-primary { background: linear-gradient(135deg, #1a1a1a, #000000); color: #ffffff; }
+.btn-secondary { background: #f0f0f0; color: #000000; }
+.btn:disabled { opacity: 0.5; cursor: not-allowed; }
+
+.visualization-area {
+  background: #fafafa;
+  border-radius: 12px;
+  padding: 2rem;
+  flex: 1;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  min-height: 400px;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.algorithm-name {
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #000000;
+  margin-bottom: 1rem;
+}
+
+.algorithm-description {
+  text-align: center;
+  color: #333333;
+  margin-bottom: 2rem;
+}
+
+.dp-table-container {
+  overflow-x: auto;
+  margin: 2rem 0;
+}
+
+.dp-table {
+  margin: 0 auto;
+  border-collapse: collapse;
+  border: 2px solid #e0e0e0;
+}
+
+.dp-table td {
+  padding: 0.75rem;
+  border: 1px solid #e0e0e0;
+  text-align: center;
+  min-width: 40px;
+  font-weight: 600;
+}
+
+.row-header {
+  background: #f0f0f0;
+  color: #000000;
+  font-weight: 700;
+}
+
+.dp-cell {
+  color: #000000;
+  transition: all 0.3s ease;
+}
+
+.dp-cell.default { background: #ffffff; }
+.dp-cell.computing { background: #e0e0e0; animation: pulse 0.5s ease-in-out; }
+.dp-cell.computed { background: #cccccc; }
+.dp-cell.result { background: #000000; color: #ffffff; font-size: 1.2rem; }
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+}
+
+.result-display {
+  margin-top: 2.5rem;
+  padding: 1.75rem;
+  background: linear-gradient(135deg, #f5f5f5, #fafafa);
+  border-radius: 12px;
+  color: #000000;
+  font-size: 1.25rem;
+  text-align: center;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  text-shadow: none;
+}
+
+/* REMOVED LEGEND AND INFO-PANEL STYLES */
+
+@media (max-width: 768px) {
+  .dp-visualizer { padding: 1rem; }
+  .visualizer-content { flex-direction: column; }
+  .controls-sidebar { max-width: 100%; }
+  .button-group { flex-direction: row; gap: 0.5rem; }
+  .btn { width: auto; flex: 1; }
+}
