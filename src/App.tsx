@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route, Link, useNavigate } from 'react-router-dom'
+import { HashRouter as Router, Routes, Route, Link, useNavigate } from 'react-router-dom'
 import './App.css'
 import Home from './pages/Home'
 import SortingVisualizer from './pages/SortingVisualizer'
